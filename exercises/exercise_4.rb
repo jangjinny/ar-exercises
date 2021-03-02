@@ -27,7 +27,7 @@ yaletown = Store.create(
 
 # use where method to fetch stores that carry men's apparel
 @mens_stores = Store.where(mens_apparel: true)
-@womens_stores = Store.where(womens_apparel: true, annual_revenue  < 1000000)
+@womens_stores = Store.where(womens_apparel: true).where('annual_revenue < 1000000', true)
 
 def filter_mens_store(mens_stores)
   mens_stores.each do |store|
