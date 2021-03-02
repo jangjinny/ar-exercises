@@ -9,3 +9,6 @@ puts "----------"
 
 @total_revenue = Store.sum("annual_revenue")
 puts @total_revenue
+
+@more_than_1M = Store.where("annual_revenue > 1000000", true).count
+puts @more_than_1M
